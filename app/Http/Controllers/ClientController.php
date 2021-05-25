@@ -24,7 +24,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
@@ -35,7 +35,21 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username'=> 'required|min:3|max:100',
+            'wallet' => 'required|min:5|max:150',
+            'email' => 'required|email|max:150',
+            'amount' => 'required|numeric'
+        ]);
+
+        $client  = new CLient;
+        $client->username = request('username');
+        $client->email = request('email');
+        $client->adresse = request('wallet');
+        $client->montant = request('amount');
+        $client->save();
+
+        return redirect()->route('index');
     }
 
     /**

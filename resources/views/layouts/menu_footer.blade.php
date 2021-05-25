@@ -7,7 +7,7 @@
 	<meta name="keywords" content="cryptocurrency, unica, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="/assets/img/favicon.ico" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -29,26 +29,23 @@
 </head>
 <body>
 	<!-- Page Preloder -->
-	<div id="preloder">
+	<!-- <div id="preloder">
 		<div class="loader"></div>
-	</div>
+	</div> -->
 
 	<!-- Header section -->
 	<header class="header-section clearfix">
 		<div class="container-fluid">
-			<a href="index.html" class="site-logo">
+			<a href="{{route('index')}}" class="site-logo">
 				<img src="/assets/img/logo.png" alt="">
 			</a>
 			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
-			<a href="" class="user"><i class="fa fa-user"></i></a>
 			<a href="{{route('login')}}" class="site-btn">Inscrivez-Vous</a>
 			<nav class="main-menu">
 				<ul class="menu-list">
-					<li><a href="">Solution</a></li>
-					<li><a href="">Features</a></li>
-					<li><a href="">News</a></li>
+					<li><a href="{{route('index')}}">Home</a></li>
+					<li><a href="">How to participate</a></li>
 					<li><a href="">About</a></li>
-					<li><a href="">Contact</a></li>
 				</ul>
 			</nav>
 		</div>

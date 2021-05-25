@@ -15,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Clients
+
+// route pour formulaire dinscription
+Route::get('inscription', 'ClientController@create')->name('inscription.create');
+Route::post('clients.store', 'ClientController@store')->name('inscription.store');
