@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SuscribeCustomerMail;
 
 class ClientController extends Controller
 {
@@ -24,7 +26,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        // session()->flash('message', 'Inscription reussit. Vous allez recevoir un mail.');
+        return view('clients.create')->with('message', 'Inscription reussit. Vous allez recevoir un mail.');
     }
 
     /**
@@ -38,7 +41,7 @@ class ClientController extends Controller
         $request->validate([
             'username'=> 'required|min:3|max:100',
             'wallet' => 'required|min:5|max:150',
-            'email' => 'required|email|max:150',
+            'email' => 'required|email|max:150|unique:users',
             'amount' => 'required|numeric'
         ]);
 
@@ -46,10 +49,14 @@ class ClientController extends Controller
         $client->username = request('username');
         $client->email = request('email');
         $client->adresse = request('wallet');
-        $client->montant = request('amount');
+        $client->montant = request('amount');  
         $client->save();
 
-        return redirect()->route('index');
+        Mail::to($client->email)->send(new SuscribeCustomerMail($client));
+
+        session()->flash('message', 'Inscription reussit. Vous allez recevoir un mail.');
+
+        return redirect()->route('index'); 
     }
 
     /**

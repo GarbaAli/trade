@@ -61,8 +61,7 @@
 								</div>
 							</div>
 							<div class="col-md-12">
-								<!-- <button type="submit" class="site-btn sb-gradients mt-4">Valider</button> -->
-                                <button type="submit" class="btn btn-primary">Nouveau Topic</button>
+								<button type="submit" class="site-btn sb-gradients mt-4">Valider</button>
 							</div>
 						</div>
 					</form>

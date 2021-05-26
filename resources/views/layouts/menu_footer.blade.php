@@ -122,5 +122,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="/assets/js/jquery-3.2.1.min.js"></script>
 	<script src="/assets/js/owl.carousel.min.js"></script>
 	<script src="/assets/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+	@if (session()->has('message'))
+	<script>
+		Swal.fire({
+		icon: 'success',
+		title: 'Confirmation',
+		text: 'Registration succeeded. You will receive an email!',
+		footer: 'Crypto.Trade-bonus'
+	});
+	</script>
+	@endif
+
 </body>
 </html>
