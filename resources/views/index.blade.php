@@ -18,7 +18,7 @@
 						<a href="{{route('inscription.create')}}" class="site-btn sb-gradients">INVEST NOW </a>
 				</div>
 				<div class="col-md-6">
-					<img src="/assets/img/homes.png" class="laptop-image" alt="">
+					<img src="/assets/img/bit.png" class="laptop-image" alt="">
 				</div>
 			</div>
 		</div>

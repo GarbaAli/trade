@@ -5,25 +5,36 @@
 
 @section('body')
 <!-- Page info section -->
-<section class="page-info-section">
+<section class="page-info-section mb-10">
 		<div class="container">
 			<h2>Investment's Plans</h2>
 			<div class="site-beradcamb">
 				<a href="{{route('index')}}">Home</a>
 				<span><i class="fa fa-angle-right"></i> Investment's Plans</span>
+				<div class="mt-20">
+				<a href="{{route('inscription.create')}}" class="site-btn sb-gradients">INVEST NOW </a>
+				</div>
 			</div>
 		</div>
+		
 	</section>
 	<!-- Page info end -->
-
 	@if (session()->has('message'))
-	<div class="alert alert-success" role="alert">.
-		{{session()->get('message')}}
+	<div class="container mt-10">
+			<div class="alert alert-primary alert-dismissible fade show" role="alert">
+					<h4 class="alert-heading">Well done!</h4>
+					<p>{{session()->get('message')}}</p>
+					<hr>
+					<p class="mb-0">the message will disappear after refreshing the page</p>
+			</div>
 	</div>
 	@endif
 
+
+	
+
     <!-- Features section -->
-	<section class="features-section spad gradient-bg">
+	<section class="features-section spad gradient-bg mt-10">
 		<div class="container text-white">
 			<div class="section-title text-center">
 				<h2>Investment's Plans</h2>

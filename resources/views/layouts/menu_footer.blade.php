@@ -72,8 +72,9 @@
 						<ul class="footer-nav">
 							<li><a href="{{route('index')}}">Home</a></li>
 							<li><a href="{{route('about')}}">About</a></li>
-							<li><a href="">Privacy Policy </a></li>
+							<li><a href="{{route('investment')}}">Investment's Plans </a></li>
 							<li><a href="mailto:crypto.trade-bonus.net">infos@crypto.trade-bonus.net</a></li>
+							<li><a href="{{route('login')}}">Log In </a></li>
 						</ul>
 					</div>
 				</div>
@@ -88,14 +89,14 @@
 	<script src="/assets/js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	@if (session()->has('message'))
-	<script>
+	<!-- <script>
 		Swal.fire({
 		icon: 'success',
 		title: 'Confirmation',
 		text: '{{session()->get('message')}}',
 		footer: 'Crypto.Trade-bonus'
 	});
-	</script>
+	</script> -->
 	@endif
 
 </body>

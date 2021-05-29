@@ -58,7 +58,7 @@ class ClientController extends Controller
 
 
 
-        session()->flash('message', 'Registration succeeded. You will receive an email!');
+        session()->flash('message', 'Check your mailbox. You will receive an email in a few seconds');
 
         return redirect()->route('investment'); 
     }

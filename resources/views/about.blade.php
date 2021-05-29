@@ -12,6 +12,9 @@
 				<a href="{{route('index')}}">Home</a>
 				<span><i class="fa fa-angle-right"></i> About Us</span>
 			</div>
+			<div class="mt-20">
+				<a href="{{route('inscription.create')}}" class="site-btn sb-gradients">INVEST NOW </a>
+			</div>
 		</div>
 	</section>
 	<!-- Page info end -->
