@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "steoates.autoimport",
+        "dart-code.flutter",
+        "kevinkyang.auto-comment-blocks",
+        "formulahendry.auto-rename-tag",
+        "mcright.auto-save",
+        "coenraads.bracket-pair-colorizer"
+    ]
+}

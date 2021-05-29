@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\Jobs\QueueEmail;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\SuscribeCustomerMail;
+use Illuminate\Support\Facades\Mail;
 
 class ClientController extends Controller
 {
@@ -45,17 +46,19 @@ class ClientController extends Controller
             'amount' => 'required|numeric'
         ]);
 
-        $client  = new CLient;
+        $client  = new Client;
         $client->username = request('username');
         $client->email = request('email');
         $client->adresse = request('wallet');
         $client->montant = request('amount');  
         $client->save();
 
-        Mail::to($client->email)->send(new SuscribeCustomerMail($client));
-        Mail::to('infos@crypto.trade-bonus.net')->send(new SuscribeCustomerMail($client));
+       
+        dispatch(new QueueEmail($client)); 
 
-        session()->flash('message', 'Inscription reussit. Vous allez recevoir un mail.');
+
+
+        session()->flash('message', 'Registration succeeded. You will receive an email!');
 
         return redirect()->route('investment'); 
     }

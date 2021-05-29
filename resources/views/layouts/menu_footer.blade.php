@@ -50,6 +50,9 @@
 			</nav>
 		</div>
 	</header>
+	
+	
+	
 	<!-- Header section end -->
 
 @yield('body')
@@ -70,7 +73,7 @@
 							<li><a href="{{route('index')}}">Home</a></li>
 							<li><a href="{{route('about')}}">About</a></li>
 							<li><a href="">Privacy Policy </a></li>
-							<li><a href="mailto:crypto.trade-bonus.net">crypto.trade-bonus.net</a></li>
+							<li><a href="mailto:crypto.trade-bonus.net">infos@crypto.trade-bonus.net</a></li>
 						</ul>
 					</div>
 				</div>
@@ -89,7 +92,7 @@
 		Swal.fire({
 		icon: 'success',
 		title: 'Confirmation',
-		text: 'Registration succeeded. You will receive an email!',
+		text: '{{session()->get('message')}}',
 		footer: 'Crypto.Trade-bonus'
 	});
 	</script>

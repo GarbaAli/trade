@@ -16,6 +16,12 @@
 	</section>
 	<!-- Page info end -->
 
+	@if (session()->has('message'))
+	<div class="alert alert-success" role="alert">.
+		{{session()->get('message')}}
+	</div>
+	@endif
+
     <!-- Features section -->
 	<section class="features-section spad gradient-bg">
 		<div class="container text-white">
